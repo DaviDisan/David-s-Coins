@@ -13,7 +13,6 @@ const PHOTO_VERSION = 3;
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
-const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ---------- business info ---------- */
 function applyBusinessInfo() {
@@ -148,7 +147,7 @@ function initGallery() {
     const actions = document.createElement('div');
     actions.className = 'card-actions';
     actions.innerHTML = `
-      <button class="btn btn-gold btn-sm" type="button" data-inquire="Buying from inventory" data-item="${title}">Inquire to Buy</button>
+      <button class="btn btn-primary btn-sm" type="button" data-inquire="Buying from inventory" data-item="${title}">Inquire to Buy</button>
       <button class="btn-link" type="button" data-view>View</button>`;
     body.append(actions);
 
@@ -278,18 +277,6 @@ function initForms() {
   });
 }
 
-/* ---------- scroll reveal ---------- */
-function initReveal() {
-  if (reduceMotion || !('IntersectionObserver' in window)) return;
-  const groups = ['.svc-card', '.steps li', '.price-card', '.coin-card', '.supply-card', '.section-head', '.calc'];
-  const els = [];
-  groups.forEach(sel => $$(sel).forEach((el, i) => { el.classList.add('reveal'); el.style.setProperty('--d', `${(i % 4) * 60}ms`); els.push(el); }));
-  const io = new IntersectionObserver(entries => entries.forEach(en => {
-    if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
-  }), { rootMargin: '0px 0px -8% 0px' });
-  els.forEach(el => io.observe(el));
-}
-
 /* ---------- boot ---------- */
 applyBusinessInfo();
 initNav();
@@ -298,6 +285,5 @@ initViewer();
 initInquiry();
 initCalc();
 initForms();
-initReveal();
 fetchSpot();
 setInterval(() => { if (!document.hidden) fetchSpot(); }, 60_000);
