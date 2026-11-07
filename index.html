@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>David's Coins &amp; Collectibles | Online Coin &amp; Bullion Dealer</title>
+  <meta name="description" content="David's Coins & Collectibles is an online coin dealer based in Katy, Texas. Shop certified Silver Eagles, bullion, and classic U.S. coins, or get a fair online offer on yours.">
+  <meta name="theme-color" content="#14110E">
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="David's Coins & Collectibles, home">
+        <img src="assets/img/logo-mark.svg" width="48" height="48" alt="">
+        <span class="brand-text">
+          <span class="brand-name">David's <em>Coins</em></span>
+          <span class="brand-sub">&amp; Collectibles</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <button class="btn btn-gold btn-sm header-inquire" type="button" data-inquire="General question">Inquire</button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#inventory">Shop Inventory</a></li>
+          <li><a href="#services">Sell to Us</a></li>
+          <li><a href="#appraisals">Appraisals</a></li>
+          <li><a href="#prices">Spot Prices</a></li>
+          <li><a href="#supplies">Supplies</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Live spot ticker -->
+    <div class="ticker" aria-label="Live precious metal spot prices">
+      <div class="container ticker-inner">
+        <span class="ticker-label"><span class="live-dot" aria-hidden="true"></span>Live Spot</span>
+        <ul class="ticker-list" data-ticker>
+          <li data-metal="XAU"><span class="m">Gold</span> <span class="p">—</span> <span class="c"></span></li>
+          <li data-metal="XAG"><span class="m">Silver</span> <span class="p">—</span> <span class="c"></span></li>
+          <li data-metal="XPT"><span class="m">Platinum</span> <span class="p">—</span> <span class="c"></span></li>
+          <li data-metal="XPD"><span class="m">Palladium</span> <span class="p">—</span> <span class="c"></span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Online Coin &amp; Bullion Dealer · Katy, Texas</p>
+          <h1>Honest prices for<br><span class="gold-text">gold, silver</span> &amp; <span class="silver-text">rare coins</span>.</h1>
+          <p class="lead">Shop certified Silver Eagles, bullion, and classic U.S. coins, or get a fair offer on yours. Every quote from David's Coins &amp; Collectibles is based on today's live spot price.</p>
+          <div class="hero-ctas">
+            <a href="#inventory" class="btn btn-gold">Shop Inventory</a>
+            <a href="#services" class="btn btn-ghost">Sell Your Coins</a>
+          </div>
+          <ul class="hero-trust" aria-label="Why customers trust us">
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>Free online appraisals</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg>Quotes tied to live spot</li>
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>PCGS · NGC · ANACS · ICG</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-glow"></div>
+          <figure class="slab slab-1"><img src="assets/img/photos/img_7975.jpg?v=3" alt="" width="960" height="1200"></figure>
+          <figure class="slab slab-2"><img src="assets/img/photos/img_7990.jpg?v=3" alt="" width="960" height="1200"></figure>
+          <figure class="slab slab-3"><img src="assets/img/photos/img_8011.jpg?v=3" alt="" width="960" height="1200"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INVENTORY / GALLERY ============ -->
+    <section class="section section-ivory" id="inventory">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Shop Inventory</p>
+          <h2>Coins available now</h2>
+          <p>See something you like? Tap <strong>Inquire to Buy</strong> for current pricing and shipping. Inventory moves fast, so we'll confirm availability when we reply.</p>
+        </header>
+
+        <div class="filters" role="group" aria-label="Filter inventory">
+          <button class="chip-btn is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip-btn" data-filter="eagles" aria-pressed="false">Silver Eagles</button>
+          <button class="chip-btn" data-filter="dollars" aria-pressed="false">Morgan &amp; Peace Dollars</button>
+          <button class="chip-btn" data-filter="certified" aria-pressed="false">Certified &amp; Errors</button>
+          <button class="chip-btn" data-filter="bullion" aria-pressed="false">Gold &amp; Silver Bullion</button>
+          <button class="chip-btn" data-filter="sets" aria-pressed="false">Sets &amp; Classics</button>
+        </div>
+
+        <div class="gallery" data-gallery>
+          <!-- Each card: data-front / data-back are photo names in assets/img/photos.
+               Optional: data-wide (landscape photos), data-labels="Label 1,Label 2" (viewer toggle names) -->
+          <article class="coin-card" data-cat="certified" data-front="img_8013" data-back="img_8014">
+            <span class="badge">NGC MS66 · Error</span>
+            <h3>2005-P West Virginia Quarter</h3>
+            <p>Mint Error · Obverse &amp; reverse die breaks · "The Greene Find"</p>
+          </article>
+          <article class="coin-card" data-cat="certified" data-front="img_8006" data-back="img_8007">
+            <span class="badge">PCGS MS67</span>
+            <h3>1938-D Buffalo Nickel</h3>
+            <p>Final year of the Buffalo design · Superb Gem</p>
+          </article>
+          <article class="coin-card" data-cat="certified" data-front="img_8011" data-back="img_8012">
+            <span class="badge">NGC Gem Proof</span>
+            <h3>Smithsonian Morgan "Schoolgirl" Dollar</h3>
+            <p>1879–2019 · 1 oz silver · Private issue struck 2019</p>
+          </article>
+          <article class="coin-card" data-cat="dollars" data-front="img_7999" data-back="img_8001">
+            <span class="badge">90% Silver</span>
+            <h3>1921 Peace Silver Dollar</h3>
+            <p>First year of issue · High relief · Encapsulated</p>
+          </article>
+          <article class="coin-card" data-cat="dollars" data-front="img_8004" data-back="img_8005">
+            <span class="badge">90% Silver</span>
+            <h3>1888 Morgan Silver Dollar</h3>
+            <p>Classic Morgan · Encapsulated</p>
+          </article>
+          <article class="coin-card" data-cat="dollars" data-front="img_7995" data-back="img_7996">
+            <span class="badge">90% Silver</span>
+            <h3>1902 Morgan Silver Dollar</h3>
+            <p>Classic Morgan · Encapsulated</p>
+          </article>
+          <article class="coin-card" data-cat="dollars" data-front="img_7997" data-back="img_7998">
+            <span class="badge">90% Silver</span>
+            <h3>1903 Morgan Silver Dollar</h3>
+            <p>Classic Morgan · Encapsulated</p>
+          </article>
+          <article class="coin-card" data-cat="dollars" data-front="img_8002" data-back="img_8003">
+            <span class="badge">90% Silver</span>
+            <h3>1921 Morgan Silver Dollar</h3>
+            <p>Final year of the Morgan series · Encapsulated</p>
+          </article>
+          <article class="coin-card" data-cat="eagles" data-front="img_7990" data-back="img_7991">
+            <span class="badge">NGC PF70</span>
+            <h3>2016-W Proof Silver Eagle</h3>
+            <p>Ultra Cameo · Lettered Edge · 30th Anniversary</p>
+          </article>
+          <article class="coin-card" data-cat="eagles" data-front="img_7988" data-back="img_7989">
+            <span class="badge">NGC MS70</span>
+            <h3>2016-W Burnished Silver Eagle</h3>
+            <p>Lettered Edge · 30th Anniversary · Red core</p>
+          </article>
+          <article class="coin-card" data-cat="eagles" data-front="img_7992" data-back="img_7993">
+            <span class="badge">NGC PF70</span>
+            <h3>2020-W Proof Silver Eagle</h3>
+            <p>Ultra Cameo · Early Releases</p>
+          </article>
+          <article class="coin-card" data-cat="eagles" data-front="img_7976" data-back="img_7977">
+            <span class="badge">ICG MS70</span>
+            <h3>2020-(P) Silver Eagle</h3>
+            <p>Emergency Production · First Day of Issue</p>
+          </article>
+          <article class="coin-card" data-cat="eagles" data-front="img_7970" data-back="img_7971">
+            <span class="badge">ANACS SP70</span>
+            <h3>2016-W Satin Finish Silver Eagle</h3>
+            <p>Satin finish · ANACS certified</p>
+          </article>
+          <article class="coin-card" data-cat="eagles" data-front="img_7984" data-back="img_7985">
+            <span class="badge">ANACS PR70</span>
+            <h3>2017-S Proof Silver Eagle</h3>
+            <p>Deep Cameo · Limited Edition Proof Set</p>
+          </article>
+          <article class="coin-card" data-cat="eagles" data-front="img_7986" data-back="img_7987">
+            <span class="badge">NGC MS70</span>
+            <h3>2016 Silver Eagle</h3>
+            <p>Lettered Edge · 30th Anniversary</p>
+          </article>
+          <article class="coin-card" data-cat="bullion" data-front="img_8009" data-back="img_8010">
+            <span class="badge">.9999 Gold</span>
+            <h3>0.5 Gram Gold Bar</h3>
+            <p>Fine gold · Sealed "We the People" assay card</p>
+          </article>
+          <article class="coin-card" data-cat="bullion" data-front="img_7974" data-back="img_7975" data-labels="Bar 1,Bar 2">
+            <span class="badge">.999 Fine</span>
+            <h3>10 oz Silver Bars</h3>
+            <p>Sealed bars, including Lady Liberty designs</p>
+          </article>
+          <article class="coin-card" data-cat="sets" data-front="img_8015" data-back="img_8016" data-wide data-labels="Denver,San Francisco">
+            <span class="badge">Mint Set</span>
+            <h3>1968 U.S. Mint Set</h3>
+            <p>Original Denver &amp; San Francisco packs · 40% silver Kennedy half</p>
+          </article>
+          <article class="coin-card" data-cat="sets" data-front="img_7978" data-back="img_7979" data-wide>
+            <span class="badge">Year Set</span>
+            <h3>1942 U.S. Year Set</h3>
+            <p>Wheat cent · Jefferson · Mercury · Washington · Walking Liberty</p>
+          </article>
+          <article class="coin-card" data-cat="sets" data-front="img_7980" data-back="img_7982" data-wide>
+            <span class="badge">Year Set</span>
+            <h3>1945 U.S. Year Set</h3>
+            <p>Wheat cent · Jefferson · Mercury · Washington · Walking Liberty</p>
+          </article>
+          <article class="coin-card" data-cat="sets" data-front="img_7972" data-back="img_7973">
+            <span class="badge">Proof</span>
+            <h3>1960 Franklin Half Dollar</h3>
+            <p>90% silver · Proof · Encapsulated</p>
+          </article>
+        </div>
+
+        <aside class="inquiry-banner">
+          <div>
+            <h3>Looking for something specific?</h3>
+            <p>Tell us the coin, grade, or budget and we'll let you know what we can find.</p>
+          </div>
+          <button class="btn btn-gold" type="button" data-inquire="Looking for a specific coin">Send a Wish List</button>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES: BUY / SELL ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Buy &amp; Sell</p>
+          <h2>Buying or selling, we keep it simple</h2>
+          <p>Whether you inherited a jar of old silver or you're hunting for a perfect-70 Eagle, we'll treat your coins like they're our own, all from your couch.</p>
+        </header>
+
+        <div class="card-grid four">
+          <article class="svc-card">
+            <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 7h16l-1.5 11a2 2 0 0 1-2 1.7h-9a2 2 0 0 1-2-1.7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
+            <h3>Buy From Us</h3>
+            <p>American Silver Eagles, certified slabs, silver bars, type sets, and key-date coins for every budget.</p>
+            <ul class="tick-list"><li>Fair, transparent premiums</li><li>Authenticity guaranteed</li></ul>
+            <button class="btn btn-outline btn-sm svc-cta" type="button" data-inquire="Buying from inventory">Inquire to Buy</button>
+          </article>
+          <article class="svc-card">
+            <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+            <h3>Sell to Us</h3>
+            <p>Gold and silver coins, bullion bars and rounds, U.S. and world coins, proof and mint sets, and graded slabs.</p>
+            <ul class="tick-list"><li>Offers tied to live spot</li><li>Quick, clear quotes</li></ul>
+            <button class="btn btn-outline btn-sm svc-cta" type="button" data-inquire="Selling coins or bullion">Get an Offer</button>
+          </article>
+          <article class="svc-card">
+            <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21l3-3"/><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6"/></svg></div>
+            <h3>Online Appraisals</h3>
+            <p>Send clear photos of both sides and we'll give you a free estimate of what your coins are worth.</p>
+            <ul class="tick-list"><li>Free photo evaluations</li><li>Written reports available</li></ul>
+            <button class="btn btn-outline btn-sm svc-cta" type="button" data-inquire="Free appraisal">Request Appraisal</button>
+          </article>
+          <article class="svc-card">
+            <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="M4 10h16M9 14h6"/></svg></div>
+            <h3>Estates &amp; Collections</h3>
+            <p>Large collection or family estate? Share a list or photos, and we'll review everything and explain every number with care.</p>
+            <ul class="tick-list"><li>Bulk lots welcome</li><li>Confidential &amp; respectful</li></ul>
+            <button class="btn btn-outline btn-sm svc-cta" type="button" data-inquire="Estate / large collection">Discuss a Collection</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ APPRAISAL PROCESS ============ -->
+    <section class="section section-dark" id="appraisals">
+      <div class="container appraisal-grid">
+        <div>
+          <p class="eyebrow">Free Online Appraisals</p>
+          <h2>How selling to us works</h2>
+          <p class="muted-on-dark">The whole process happens online and by mail, with no appointments and no pressure.</p>
+          <ol class="steps">
+            <li>
+              <span class="step-num">01</span>
+              <div><h3>Send us photos</h3><p>Use the inquiry form or email clear photos of the front and back. Please don't clean your coins, since cleaning can sharply reduce their value.</p></div>
+            </li>
+            <li>
+              <span class="step-num">02</span>
+              <div><h3>Get a clear offer</h3><p>We review the grade, weight, and metal content and send you a written quote tied to the live spot price.</p></div>
+            </li>
+            <li>
+              <span class="step-num">03</span>
+              <div><h3>Ship &amp; get paid</h3><p>Accept the offer and we'll send shipping instructions. Once your coins arrive and are verified with calibrated scales and a digital microscope, you get paid.</p></div>
+            </li>
+          </ol>
+          <button class="btn btn-gold" type="button" data-inquire="Free appraisal">Start an Appraisal</button>
+        </div>
+        <div class="appraisal-media">
+          <figure class="frame"><img src="assets/img/microscope.jpg" alt="Digital coin microscope showing a magnified Statue of Liberty coin design" width="380" height="526" loading="lazy"></figure>
+          <figure class="frame frame-offset"><img src="assets/img/scale.jpg" alt="Precision digital scale accurate to 0.1 gram" width="553" height="555" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LIVE PRICES ============ -->
+    <section class="section" id="prices">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Market Watch</p>
+          <h2>Live precious metal spot prices</h2>
+          <p>Spot is the starting point for every bullion quote we give. Prices are per troy ounce in USD and refresh automatically every 60 seconds.</p>
+        </header>
+
+        <div class="price-grid" data-price-cards>
+          <article class="price-card gold" data-metal="XAU">
+            <header><span class="chip">AU</span><h3>Gold</h3></header>
+            <p class="price" aria-live="polite">—</p>
+            <p class="delta">Loading…</p>
+          </article>
+          <article class="price-card silver" data-metal="XAG">
+            <header><span class="chip">AG</span><h3>Silver</h3></header>
+            <p class="price" aria-live="polite">—</p>
+            <p class="delta">Loading…</p>
+          </article>
+          <article class="price-card platinum" data-metal="XPT">
+            <header><span class="chip">PT</span><h3>Platinum</h3></header>
+            <p class="price" aria-live="polite">—</p>
+            <p class="delta">Loading…</p>
+          </article>
+          <article class="price-card palladium" data-metal="XPD">
+            <header><span class="chip">PD</span><h3>Palladium</h3></header>
+            <p class="price" aria-live="polite">—</p>
+            <p class="delta">Loading…</p>
+          </article>
+        </div>
+
+        <div class="calc">
+          <div class="calc-copy">
+            <h3>Melt value calculator</h3>
+            <p>Estimate the precious-metal content of what you have. Collector premiums on rare or graded coins are often much higher, so send us photos for a real number.</p>
+          </div>
+          <form class="calc-form" data-calc>
+            <div class="field">
+              <label for="calc-item">Item</label>
+              <select id="calc-item">
+                <option value="XAG|0.1808">Pre-1965 U.S. quarter (90% silver)</option>
+                <option value="XAG|0.0723">Pre-1965 U.S. dime (90% silver)</option>
+                <option value="XAG|0.3617">Pre-1965 U.S. half dollar (90% silver)</option>
+                <option value="XAG|0.1479">1965–70 Kennedy half (40% silver)</option>
+                <option value="XAG|0.7734">Morgan / Peace dollar (90% silver)</option>
+                <option value="XAG|1">American Silver Eagle (1 oz)</option>
+                <option value="XAG|10">10 oz silver bar</option>
+                <option value="XAU|1">American Gold Eagle (1 oz)</option>
+                <option value="XAU|0.25">1/4 oz gold coin</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="calc-qty">Quantity</label>
+              <input id="calc-qty" type="number" inputmode="numeric" min="1" step="1" value="1">
+            </div>
+            <output class="calc-out" for="calc-item calc-qty" aria-live="polite">
+              <span class="calc-label">Estimated melt value</span>
+              <span class="calc-value" data-calc-value>—</span>
+            </output>
+          </form>
+        </div>
+        <p class="fineprint" data-price-status>Spot data provided by gold-api.com. Shown for reference only. Actual buy and sell prices are quoted on request.</p>
+      </div>
+    </section>
+
+    <!-- ============ SUPPLIES ============ -->
+    <section class="section section-ivory" id="supplies">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Collector Supplies</p>
+          <h2>Protect, store &amp; inspect</h2>
+          <p>Everything you need to care for a collection. Supplies are available by inquiry. Send us a message and we'll confirm price and shipping.</p>
+        </header>
+
+        <div class="supply-grid">
+          <article class="supply-card">
+            <div class="supply-img"><img src="assets/img/microscope.jpg" alt="LCD digital coin microscope" width="380" height="526" loading="lazy"></div>
+            <h3>Digital Coin Microscopes</h3>
+            <p>LCD-screen scopes for spotting die varieties, errors, and surface detail.</p>
+          </article>
+          <article class="supply-card">
+            <div class="supply-img"><img src="assets/img/scale.jpg" alt="Digital pocket scale with 0.1 gram resolution" width="553" height="555" loading="lazy"></div>
+            <h3>Precision Scales</h3>
+            <p>0.1 g resolution for checking weight and spotting counterfeits.</p>
+          </article>
+          <article class="supply-card icon-card">
+            <div class="supply-icon"><svg aria-hidden="true" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="11"/></svg></div>
+            <h3>Capsules &amp; Air-Tites</h3>
+            <p>Crystal-clear holders sized for every denomination, from dimes to 1 oz rounds.</p>
+          </article>
+          <article class="supply-card icon-card">
+            <div class="supply-icon"><svg aria-hidden="true" viewBox="0 0 48 48"><rect x="8" y="10" width="32" height="28" rx="2"/><path d="M24 10v28"/><circle cx="16" cy="20" r="3"/><circle cx="16" cy="29" r="3"/><circle cx="32" cy="20" r="3"/><circle cx="32" cy="29" r="3"/></svg></div>
+            <h3>Albums &amp; Folders</h3>
+            <p>State quarters, Lincoln cents, and more. Fill the holes and complete the set.</p>
+          </article>
+          <article class="supply-card icon-card">
+            <div class="supply-icon"><svg aria-hidden="true" viewBox="0 0 48 48"><rect x="12" y="6" width="24" height="36" rx="3"/><path d="M12 14h24"/><circle cx="24" cy="28" r="7"/></svg></div>
+            <h3>Slab Storage Boxes</h3>
+            <p>Sturdy boxes for PCGS, NGC, ANACS, and ICG slabs.</p>
+          </article>
+          <article class="supply-card icon-card">
+            <div class="supply-icon"><svg aria-hidden="true" viewBox="0 0 48 48"><rect x="16" y="4" width="16" height="40" rx="3"/><path d="M16 12h16M16 36h16"/></svg></div>
+            <h3>Tubes, Flips &amp; Gloves</h3>
+            <p>Coin tubes, 2×2 flips, cotton and nitrile gloves, and archival-safe sleeves.</p>
+          </article>
+        </div>
+        <p class="center"><button class="btn btn-outline" type="button" data-inquire="Collector supplies">Inquire About Supplies</button></p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section-dark" id="contact">
+      <div class="container visit-grid">
+        <div class="visit-info">
+          <p class="eyebrow">Get In Touch</p>
+          <h2>Questions? Let's talk coins.</h2>
+          <p class="muted-on-dark">David's Coins &amp; Collectibles is an online-only dealer based in Katy, Texas. Reach us by phone, email, or the form, whether you're buying, selling, or just curious what something is worth.</p>
+
+          <dl class="contact-list">
+            <div>
+              <dt><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Phone</dt>
+              <dd><a data-biz="phone" href="tel:+10000000000">(000) 000-0000</a></dd>
+            </div>
+            <div>
+              <dt><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</dt>
+              <dd><a data-biz="email" href="mailto:info@example.com">info@example.com</a></dd>
+            </div>
+            <div>
+              <dt><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Online Only</dt>
+              <dd>Based in Katy, Texas · Shipping nationwide</dd>
+            </div>
+          </dl>
+        </div>
+
+        <form class="contact-form" data-contact novalidate>
+          <h3>Send us a message</h3>
+          <div class="field">
+            <label for="cf-name">Name <span aria-hidden="true">*</span></label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-err">
+            <p class="err" id="cf-name-err"></p>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="cf-phone">Phone</label>
+              <input id="cf-phone" name="phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="cf-email">Email <span aria-hidden="true">*</span></label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-err">
+              <p class="err" id="cf-email-err"></p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-topic">I'm interested in</label>
+            <select id="cf-topic" name="topic">
+              <option>Buying from inventory</option>
+              <option>Selling coins or bullion</option>
+              <option>Free appraisal</option>
+              <option>Estate / large collection</option>
+              <option>Collector supplies</option>
+              <option>Looking for a specific coin</option>
+              <option>General question</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cf-msg">Message</label>
+            <textarea id="cf-msg" name="message" rows="4" placeholder="Tell us a little about your coins or what you're looking for."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-block">Send Message</button>
+          <p class="form-note">Submitting opens your email app with this message filled in.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-mark.svg" width="64" height="64" alt="">
+        <p class="footer-name">David's Coins &amp; Collectibles</p>
+        <p>An online coin and bullion dealer based in Katy, Texas.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#inventory">Shop Inventory</a></li>
+          <li><a href="#services">Sell to Us</a></li>
+          <li><a href="#appraisals">Appraisals</a></li>
+          <li><a href="#prices">Spot Prices</a></li>
+          <li><a href="#supplies">Supplies</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a data-biz="phone" href="tel:+10000000000">(000) 000-0000</a></li>
+          <li><a data-biz="email" href="mailto:info@example.com">info@example.com</a></li>
+          <li>Online only · Katy, Texas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year></span> David's Coins &amp; Collectibles. All rights reserved.</p>
+      <p>Spot prices are for reference only and are not an offer to buy or sell.</p>
+    </div>
+  </footer>
+
+  <!-- Coin viewer dialog -->
+  <dialog class="viewer" data-viewer aria-labelledby="viewer-title">
+    <div class="viewer-inner">
+      <button class="viewer-close" data-viewer-close aria-label="Close">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <figure class="viewer-figure"><img data-viewer-img alt=""></figure>
+      <div class="viewer-meta">
+        <span class="badge" data-viewer-badge></span>
+        <h3 id="viewer-title" data-viewer-title></h3>
+        <p data-viewer-desc></p>
+        <div class="seg" role="group" aria-label="Side">
+          <button data-side="front" aria-pressed="true">Front</button>
+          <button data-side="back" aria-pressed="false">Back</button>
+        </div>
+        <button class="btn btn-gold btn-block" type="button" data-viewer-inquire>Inquire to Buy</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Quick inquiry dialog -->
+  <dialog class="inquiry" data-inquiry aria-labelledby="inq-title">
+    <form class="contact-form inquiry-form" data-contact data-quick novalidate>
+      <button class="viewer-close" type="button" data-inquiry-close aria-label="Close">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <p class="eyebrow">Quick Inquiry</p>
+      <h3 id="inq-title" data-inq-title>Ask about a coin</h3>
+      <input type="hidden" name="topic" value="General question">
+      <input type="hidden" name="item" value="">
+      <div class="field">
+        <label for="qi-name">Name <span aria-hidden="true">*</span></label>
+        <input id="qi-name" name="name" type="text" autocomplete="name" required aria-describedby="qi-name-err">
+        <p class="err" id="qi-name-err"></p>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="qi-email">Email <span aria-hidden="true">*</span></label>
+          <input id="qi-email" name="email" type="email" autocomplete="email" required aria-describedby="qi-email-err">
+          <p class="err" id="qi-email-err"></p>
+        </div>
+        <div class="field">
+          <label for="qi-phone">Phone</label>
+          <input id="qi-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="field">
+        <label for="qi-msg">Message</label>
+        <textarea id="qi-msg" name="message" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-gold btn-block">Send Inquiry</button>
+      <p class="form-note">Opens your email app with this message filled in.</p>
+    </form>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

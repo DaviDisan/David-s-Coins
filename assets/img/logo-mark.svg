@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="David's Coins &amp; Collectibles monogram">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F7E7A1"/>
+      <stop offset=".35" stop-color="#D9AE45"/>
+      <stop offset=".65" stop-color="#A8771C"/>
+      <stop offset="1" stop-color="#EBCB6E"/>
+    </linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".45" stop-color="#B9BEC4"/>
+      <stop offset=".7" stop-color="#EEF0F2"/>
+      <stop offset="1" stop-color="#868C93"/>
+    </linearGradient>
+    <radialGradient id="f" cx=".5" cy=".4" r=".7">
+      <stop offset="0" stop-color="#2A241D"/>
+      <stop offset="1" stop-color="#110E0B"/>
+    </radialGradient>
+  </defs>
+  <circle cx="60" cy="60" r="58" fill="url(#g)"/>
+  <circle cx="60" cy="60" r="55.5" fill="none" stroke="#7A5512" stroke-width="3.5" stroke-dasharray="1 1.6" opacity=".55"/>
+  <circle cx="60" cy="60" r="50" fill="url(#f)" stroke="url(#g)" stroke-width="1.5"/>
+  <circle cx="60" cy="60" r="45.5" fill="none" stroke="url(#g)" stroke-width=".6" stroke-dasharray="2 2.4" opacity=".7"/>
+  <text x="49" y="80" text-anchor="middle" font-family="'Cormorant', 'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="58" fill="url(#g)">D</text>
+  <text x="72" y="84" text-anchor="middle" font-family="'Cormorant', 'Cormorant Garamond', Georgia, serif" font-weight="700" font-size="50" fill="url(#s)">C</text>
+  <path d="M60 95 l2.2 4 -2.2 4 -2.2 -4z" fill="url(#g)"/>
+  <path d="M60 17 l1.6 3 -1.6 3 -1.6 -3z" fill="url(#s)"/>
+</svg>
