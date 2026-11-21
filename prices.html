@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Live Spot Prices | David's Coins &amp; Collectibles</title>
+  <meta name="description" content="Live gold, silver, platinum and palladium spot prices with a melt value calculator.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=4">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="David's Coins & Collectibles, home">
+        <img src="assets/img/logo-mark.svg" width="48" height="48" alt="">
+        <span class="brand-text">
+          <span class="brand-name">David's Coins</span>
+          <span class="brand-sub">&amp; Collectibles</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <button class="btn btn-primary btn-sm header-inquire" type="button" data-inquire="General question">Inquire</button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="inventory.html">Shop Inventory</a></li>
+          <li><a href="sell.html">Sell to Us</a></li>
+          <li><a href="appraisals.html">Appraisals</a></li>
+          <li><a href="prices.html" aria-current="page">Spot Prices</a></li>
+          <li><a href="supplies.html">Supplies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Live spot ticker -->
+    <div class="ticker" aria-label="Live precious metal spot prices">
+      <div class="container ticker-inner">
+        <span class="ticker-label"><span class="live-dot" aria-hidden="true"></span>Live Spot</span>
+        <ul class="ticker-list" data-ticker>
+          <li data-metal="XAU"><span class="m">Gold</span> <span class="p">—</span> <span class="c"></span></li>
+          <li data-metal="XAG"><span class="m">Silver</span> <span class="p">—</span> <span class="c"></span></li>
+          <li data-metal="XPT"><span class="m">Platinum</span> <span class="p">—</span> <span class="c"></span></li>
+          <li data-metal="XPD"><span class="m">Palladium</span> <span class="p">—</span> <span class="c"></span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ LIVE PRICES ============ -->
+    <section class="section" id="prices">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Market Watch</p>
+          <h1 class="page-title">Live precious metal spot prices</h1>
+          <p>Spot is the starting point for every bullion quote we give. Prices are per troy ounce in USD and refresh automatically every 60 seconds.</p>
+        </header>
+
+        <div class="price-grid" data-price-cards>
+          <article class="price-card gold" data-metal="XAU">
+            <header><span class="chip">AU</span><h3>Gold</h3></header>
+            <p class="price" aria-live="polite">—</p>
+            <p class="delta">Loading…</p>
+          </article>
+          <article class="price-card silver" data-metal="XAG">
+            <header><span class="chip">AG</span><h3>Silver</h3></header>
+            <p class="price" aria-live="polite">—</p>
+            <p class="delta">Loading…</p>
+          </article>
+          <article class="price-card platinum" data-metal="XPT">
+            <header><span class="chip">PT</span><h3>Platinum</h3></header>
+            <p class="price" aria-live="polite">—</p>
+            <p class="delta">Loading…</p>
+          </article>
+          <article class="price-card palladium" data-metal="XPD">
+            <header><span class="chip">PD</span><h3>Palladium</h3></header>
+            <p class="price" aria-live="polite">—</p>
+            <p class="delta">Loading…</p>
+          </article>
+        </div>
+
+        <div class="calc">
+          <div class="calc-copy">
+            <h3>Melt value calculator</h3>
+            <p>Estimate the precious-metal content of what you have. Collector premiums on rare or graded coins are often much higher, so send us photos for a real number.</p>
+          </div>
+          <form class="calc-form" data-calc>
+            <div class="field">
+              <label for="calc-item">Item</label>
+              <select id="calc-item">
+                <option value="XAG|0.1808">Pre-1965 U.S. quarter (90% silver)</option>
+                <option value="XAG|0.0723">Pre-1965 U.S. dime (90% silver)</option>
+                <option value="XAG|0.3617">Pre-1965 U.S. half dollar (90% silver)</option>
+                <option value="XAG|0.1479">1965–70 Kennedy half (40% silver)</option>
+                <option value="XAG|0.7734">Morgan / Peace dollar (90% silver)</option>
+                <option value="XAG|1">American Silver Eagle (1 oz)</option>
+                <option value="XAG|10">10 oz silver bar</option>
+                <option value="XAU|1">American Gold Eagle (1 oz)</option>
+                <option value="XAU|0.25">1/4 oz gold coin</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="calc-qty">Quantity</label>
+              <input id="calc-qty" type="number" inputmode="numeric" min="1" step="1" value="1">
+            </div>
+            <output class="calc-out" for="calc-item calc-qty" aria-live="polite">
+              <span class="calc-label">Estimated melt value</span>
+              <span class="calc-value" data-calc-value>—</span>
+            </output>
+          </form>
+        </div>
+        <p class="fineprint" data-price-status>Spot data provided by gold-api.com. Shown for reference only. Actual buy and sell prices are quoted on request.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-mark.svg" width="56" height="56" alt="">
+        <p class="footer-name">David's Coins &amp; Collectibles</p>
+        <p>An online coin and bullion dealer based in Katy, Texas.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="inventory.html">Shop Inventory</a></li>
+          <li><a href="sell.html">Sell to Us</a></li>
+          <li><a href="appraisals.html">Appraisals</a></li>
+          <li><a href="prices.html">Spot Prices</a></li>
+          <li><a href="supplies.html">Supplies</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li data-biz-row="phone"><a data-biz="phone" href="tel:">Phone</a></li>
+          <li><a data-biz="email" href="mailto:djd101108@yahoo.com">djd101108@yahoo.com</a></li>
+          <li><a href="contact.html">Send us a message</a></li>
+          <li>Online only · Katy, Texas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year></span> David's Coins &amp; Collectibles. All rights reserved.</p>
+      <p>Spot prices are for reference only and are not an offer to buy or sell.</p>
+    </div>
+  </footer>
+
+
+  <!-- Quick inquiry dialog -->
+  <dialog class="inquiry" data-inquiry aria-labelledby="inq-title">
+    <form class="contact-form inquiry-form" data-contact data-quick novalidate>
+            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="viewer-close" type="button" data-inquiry-close aria-label="Close">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <p class="eyebrow">Quick Inquiry</p>
+      <h3 id="inq-title" data-inq-title>Ask about a coin</h3>
+      <input type="hidden" name="topic" value="General question">
+      <input type="hidden" name="item" value="">
+      <div class="field">
+        <label for="qi-name">Name <span aria-hidden="true">*</span></label>
+        <input id="qi-name" name="name" type="text" autocomplete="name" required aria-describedby="qi-name-err">
+        <p class="err" id="qi-name-err"></p>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="qi-email">Email <span aria-hidden="true">*</span></label>
+          <input id="qi-email" name="email" type="email" autocomplete="email" required aria-describedby="qi-email-err">
+          <p class="err" id="qi-email-err"></p>
+        </div>
+        <div class="field">
+          <label for="qi-phone">Phone</label>
+          <input id="qi-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="field">
+        <label for="qi-msg">Message</label>
+        <textarea id="qi-msg" name="message" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+      <p class="form-note">Your message goes straight to our inbox.</p>
+    </form>
+  </dialog>
+
+  <script src="assets/js/main.js?v=4" defer></script>
+</body>
+</html>

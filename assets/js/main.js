@@ -4,9 +4,13 @@
 
 /* ---- Business info: edit these and every matching spot on the page updates ---- */
 const BUSINESS = {
-  phone: '(000) 000-0000',
-  email: 'info@example.com',
+  phone: '',                       // leave empty to hide phone links everywhere
+  email: 'djd101108@yahoo.com',    // shown on the site and where inquiry forms are delivered
 };
+
+// Inquiry forms are emailed through FormSubmit (formsubmit.co). The first submission
+// from a new domain sends BUSINESS.email an "Activate Form" link that must be clicked once.
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${BUSINESS.email}`;
 
 // Bump this when photos are replaced so browsers fetch the new files
 const PHOTO_VERSION = 3;
@@ -17,7 +21,10 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 /* ---------- business info ---------- */
 function applyBusinessInfo() {
   const tel = '+1' + BUSINESS.phone.replace(/\D/g, '');
-  $$('[data-biz="phone"]').forEach(el => { el.textContent = BUSINESS.phone; el.href = 'tel:' + tel; });
+  $$('[data-biz="phone"]').forEach(el => {
+    if (!BUSINESS.phone) { el.closest('[data-biz-row], .contact-list > div').hidden = true; return; }
+    el.textContent = BUSINESS.phone; el.href = 'tel:' + tel;
+  });
   $$('[data-biz="email"]').forEach(el => { el.textContent = BUSINESS.email; el.href = 'mailto:' + BUSINESS.email; });
   $$('[data-year]').forEach(el => (el.textContent = new Date().getFullYear()));
 }
@@ -35,19 +42,6 @@ function initNav() {
   });
   nav.addEventListener('click', e => { if (e.target.closest('a')) close(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('is-open')) { close(); btn.focus(); } });
-
-  // highlight the section in view
-  const links = $$('.primary-nav a[href^="#"]');
-  const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (!en.isIntersecting) return;
-      links.forEach(a => { a.classList.remove('is-current'); a.removeAttribute('aria-current'); });
-      const a = map.get(en.target.id);
-      if (a) { a.classList.add('is-current'); a.setAttribute('aria-current', 'true'); }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px' });
-  map.forEach((_, id) => { const s = document.getElementById(id); if (s) io.observe(s); });
 }
 
 /* ---------- live spot prices ---------- */
@@ -190,6 +184,7 @@ function setSide(side) {
 }
 function initViewer() {
   const dlg = $('[data-viewer]');
+  if (!dlg) return;
   $$('.seg button', dlg).forEach(b => b.addEventListener('click', () => setSide(b.dataset.side)));
   $('[data-viewer-close]', dlg).addEventListener('click', () => dlg.close());
   $('[data-viewer-inquire]', dlg).addEventListener('click', () => {
@@ -227,7 +222,7 @@ function openInquiry(topic = 'General question', item = '') {
   msg.placeholder = INQUIRY_PROMPTS[topic] || 'How can we help?';
   $$('.err', form).forEach(e => (e.textContent = ''));
   $$('[aria-invalid]', form).forEach(i => i.removeAttribute('aria-invalid'));
-  $('.form-status', form)?.remove();
+  resetForm(form);
   dlg.showModal();
   form.elements.name.focus();
 }
@@ -242,7 +237,49 @@ function initInquiry() {
   });
 }
 
-/* ---------- forms (mailto) ---------- */
+/* ---------- forms (emailed via FormSubmit) ---------- */
+function setStatus(form, text, kind) {
+  let status = $('.form-status', form);
+  if (!status) { status = document.createElement('p'); status.setAttribute('role', 'status'); form.append(status); }
+  status.className = `form-status ${kind}`;
+  status.innerHTML = text;
+}
+
+// Back to a fresh, editable form (used when the quick-inquiry dialog reopens)
+function resetForm(form) {
+  form.classList.remove('is-sent');
+  $('.form-status', form)?.remove();
+  const btn = $('button[type="submit"]', form);
+  btn.disabled = false;
+  btn.textContent = btn.dataset.label || btn.textContent;
+}
+
+async function sendForm(form) {
+  const f = form.elements;
+  const item = f.item?.value || '';
+  const payload = {
+    name: f.name.value.trim(),
+    email: f.email.value.trim(),
+    phone: f.phone.value.trim() || 'n/a',
+    topic: f.topic.value,
+    ...(item && { item }),
+    message: f.message.value.trim() || '(no message)',
+    page: location.pathname,
+    _subject: item ? `Website inquiry: ${item}` : `Website inquiry: ${f.topic.value}`,
+    _replyto: f.email.value.trim(),
+    _template: 'table',
+    _captcha: 'false',
+    _honey: f._honey?.value || '',
+  };
+  const res = await fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(payload),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || `HTTP ${res.status}`);
+}
+
 function initForms() {
   const rules = {
     name: v => v.trim() ? '' : 'Please enter your name.',
@@ -258,21 +295,29 @@ function initForms() {
     };
     Object.keys(rules).forEach(n => form.elements[n].addEventListener('blur', e => check(e.target)));
 
-    form.addEventListener('submit', e => {
+    const btn = $('button[type="submit"]', form);
+    btn.dataset.label = btn.textContent;
+
+    form.addEventListener('submit', async e => {
       e.preventDefault();
+      if (btn.disabled) return;
       const bad = Object.keys(rules).map(n => form.elements[n]).filter(i => !check(i));
       if (bad.length) { bad[0].focus(); return; }
-      const f = form.elements;
-      const item = f.item?.value;
-      const subject = item ? `Inquiry: ${item}` : `Website inquiry: ${f.topic.value}`;
-      const body = [
-        `Name: ${f.name.value}`, `Phone: ${f.phone.value || 'n/a'}`, `Email: ${f.email.value}`,
-        `Topic: ${f.topic.value}`, item ? `Item: ${item}` : '', '', f.message.value,
-      ].filter((l, i) => l || i > 4).join('\n');
-      location.href = `mailto:${BUSINESS.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      let status = $('.form-status', form);
-      if (!status) { status = document.createElement('p'); status.className = 'form-status'; status.setAttribute('role', 'status'); form.append(status); }
-      status.textContent = `Opening your email app… If nothing happens, email us at ${BUSINESS.email}.`;
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      $('.form-status', form)?.remove();
+      try {
+        await sendForm(form);
+        form.reset();
+        form.classList.add('is-sent');
+        btn.textContent = 'Sent';
+        setStatus(form, 'Thanks, your message was sent. We\'ll reply by email soon.', 'ok');
+      } catch {
+        btn.disabled = false;
+        btn.textContent = btn.dataset.label;
+        setStatus(form, `Sorry, your message didn't go through. Please try again, or email us directly at <a href="mailto:${BUSINESS.email}">${BUSINESS.email}</a>.`, 'error');
+      }
     });
   });
 }
