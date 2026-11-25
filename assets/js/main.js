@@ -5,7 +5,7 @@
 /* ---- Business info: edit these and every matching spot on the page updates ---- */
 const BUSINESS = {
   phone: '',                       // leave empty to hide phone links everywhere
-  email: 'djd101108@yahoo.com',    // shown on the site and where inquiry forms are delivered
+  email: 'daviddisanto52@gmail.com',    // shown on the site and where inquiry forms are delivered
 };
 
 // Inquiry forms are emailed through FormSubmit (formsubmit.co). The first submission
