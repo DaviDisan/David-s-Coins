@@ -66,6 +66,20 @@ async function fetchSpot() {
   });
   renderSpot(ok > 0);
   updateCalc();
+  updateItemPrices();
+}
+
+/* Bullion and common silver are priced as live melt value + a fixed dollar premium.
+   The HTML holds a price worked out at the time of writing, used until spot loads. */
+const wholeUsd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+function updateItemPrices() {
+  $$('.price-tag[data-oz]').forEach(el => {
+    const s = spot[el.dataset.metal];
+    if (s == null) return;
+    const price = Math.round(s * Number(el.dataset.oz) + Number(el.dataset.premium));
+    el.textContent = wholeUsd.format(price) + (el.dataset.unit || '');
+    el.title = 'Priced from today\'s spot';
+  });
 }
 
 function renderSpot(ok) {
@@ -169,6 +183,8 @@ function openViewer(card) {
   $('[data-viewer-title]', dlg).textContent = $('h3', card).textContent;
   $('[data-viewer-desc]', dlg).textContent = $('.body p', card).textContent;
   $('[data-viewer-badge]', dlg).textContent = $('.body .badge', card).textContent;
+  const priceEl = $('[data-viewer-price]', dlg);
+  if (priceEl) priceEl.textContent = cardPrice(card);
   const labels = (card.dataset.labels || 'Front,Back').split(',');
   $$('.seg button', dlg).forEach((b, i) => (b.textContent = labels[i]));
   setSide('front');
@@ -189,7 +205,7 @@ function initViewer() {
   $('[data-viewer-close]', dlg).addEventListener('click', () => dlg.close());
   $('[data-viewer-inquire]', dlg).addEventListener('click', () => {
     dlg.close();
-    openInquiry('Buying from inventory', $('h3', viewerCard).textContent);
+    openInquiry('Buying from inventory', $('h3', viewerCard).textContent, cardPrice(viewerCard));
   });
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); }); // backdrop click
 }
@@ -211,14 +227,18 @@ const INQUIRY_PROMPTS = {
   'Looking for a specific coin': 'Which coin, grade, and budget are you looking for?',
 };
 
-function openInquiry(topic = 'General question', item = '') {
+const cardPrice = card => $('.price-tag', card)?.textContent.trim() || '';
+
+function openInquiry(topic = 'General question', item = '', price = '') {
   const dlg = $('[data-inquiry]');
   const form = $('form', dlg);
   form.elements.topic.value = topic;
-  form.elements.item.value = item;
+  form.elements.item.value = price ? `${item} (listed at ${price})` : item;
   $('[data-inq-title]', dlg).textContent = item ? `Inquire: ${item}` : (INQUIRY_TITLES[topic] || 'Ask me anything');
   const msg = form.elements.message;
-  msg.value = item ? `Hi, I'm interested in the ${item}. Is it still available, and what's the price with shipping?` : '';
+  msg.value = !item ? ''
+    : price ? `Hi, I'd like to buy the ${item} listed at ${price}. Is it still available, and what would shipping be?`
+    : `Hi, I'm interested in the ${item}. Is it still available, and what's the price with shipping?`;
   msg.placeholder = INQUIRY_PROMPTS[topic] || 'What can I help with?';
   $$('.err', form).forEach(e => (e.textContent = ''));
   $$('[aria-invalid]', form).forEach(i => i.removeAttribute('aria-invalid'));
@@ -233,7 +253,7 @@ function initInquiry() {
   dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
   document.addEventListener('click', e => {
     const btn = e.target.closest('[data-inquire]');
-    if (btn) openInquiry(btn.dataset.inquire, btn.dataset.item || '');
+    if (btn) openInquiry(btn.dataset.inquire, btn.dataset.item || '', btn.dataset.item ? cardPrice(btn.closest('.coin-card')) : '');
   });
 }
 

@@ -377,3 +377,9 @@ main > .section:first-child { padding-top: clamp(2.5rem, 5vw, 4rem); }
 
 .contact-list dt { color: var(--brass-light); }
 .price-card header { margin-bottom: .25rem; }
+/* ---------- prices & guarantee ---------- */
+.coin-card .price-tag { margin: -.4rem 0 1rem; font-size: 1.35rem; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.coin-card.is-featured .price-tag { font-size: 1.6rem; }
+.viewer-price { font-size: 1.6rem; font-weight: 700; color: var(--on-ink) !important; margin: 0 0 .8rem; font-variant-numeric: tabular-nums; }
+.page-head .guarantee-note { margin-top: 1rem; padding: .9rem 1.1rem; background: var(--surface); border-radius: var(--radius); color: var(--text); font-size: .95rem; }
+.guarantee-note a { color: var(--ink); font-weight: 700; text-decoration-color: var(--brass); text-underline-offset: 3px; }
