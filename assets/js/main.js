@@ -96,7 +96,7 @@ function renderSpot(ok) {
     }
   });
   const status = $('[data-price-status]');
-  if (status && !ok) status.textContent = 'Live prices are temporarily unavailable. Contact us for today\'s numbers.';
+  if (status && !ok) status.textContent = 'Live prices are temporarily unavailable. Email me for today\'s numbers.';
 }
 
 /* ---------- melt calculator ---------- */
@@ -201,7 +201,7 @@ const INQUIRY_TITLES = {
   'Free appraisal': 'Request a free appraisal',
   'Estate / large collection': 'Discuss a collection',
   'Collector supplies': 'Ask about supplies',
-  'Looking for a specific coin': 'Send us your wish list',
+  'Looking for a specific coin': 'Send me your wish list',
 };
 const INQUIRY_PROMPTS = {
   'Selling coins or bullion': 'What do you have? Include dates, quantities, and any grading. Email photos of both sides after sending.',
@@ -216,10 +216,10 @@ function openInquiry(topic = 'General question', item = '') {
   const form = $('form', dlg);
   form.elements.topic.value = topic;
   form.elements.item.value = item;
-  $('[data-inq-title]', dlg).textContent = item ? `Inquire: ${item}` : (INQUIRY_TITLES[topic] || 'Ask us anything');
+  $('[data-inq-title]', dlg).textContent = item ? `Inquire: ${item}` : (INQUIRY_TITLES[topic] || 'Ask me anything');
   const msg = form.elements.message;
   msg.value = item ? `Hi, I'm interested in the ${item}. Is it still available, and what's the price with shipping?` : '';
-  msg.placeholder = INQUIRY_PROMPTS[topic] || 'How can we help?';
+  msg.placeholder = INQUIRY_PROMPTS[topic] || 'What can I help with?';
   $$('.err', form).forEach(e => (e.textContent = ''));
   $$('[aria-invalid]', form).forEach(i => i.removeAttribute('aria-invalid'));
   resetForm(form);
@@ -312,11 +312,11 @@ function initForms() {
         form.reset();
         form.classList.add('is-sent');
         btn.textContent = 'Sent';
-        setStatus(form, 'Thanks, your message was sent. We\'ll reply by email soon.', 'ok');
+        setStatus(form, 'Thanks, your message was sent. I\'ll reply by email.', 'ok');
       } catch {
         btn.disabled = false;
         btn.textContent = btn.dataset.label;
-        setStatus(form, `Sorry, your message didn't go through. Please try again, or email us directly at <a href="mailto:${BUSINESS.email}">${BUSINESS.email}</a>.`, 'error');
+        setStatus(form, `Sorry, your message didn't go through. Please try again, or email me directly at <a href="mailto:${BUSINESS.email}">${BUSINESS.email}</a>.`, 'error');
       }
     });
   });

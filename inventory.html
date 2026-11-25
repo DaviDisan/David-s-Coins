@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shop Inventory | David's Coins &amp; Collectibles</title>
-  <meta name="description" content="Certified Silver Eagles, Morgan and Peace dollars, error coins, gold and silver bullion, and classic U.S. sets available now.">
+  <title>Inventory | David's Coins &amp; Collectibles</title>
+  <meta name="description" content="Certified Silver Eagles, Morgan and Peace dollars, error coins, bullion and classic U.S. sets, each photographed front and back.">
   <meta name="theme-color" content="#111111">
   <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=6">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="David's Coins & Collectibles, home">
+      <a class="brand" href="index.html" aria-label="David's Coins &amp; Collectibles, home">
         <img src="assets/img/logo-mark.svg" width="48" height="48" alt="">
         <span class="brand-text">
           <span class="brand-name">David's Coins</span>
@@ -34,47 +34,45 @@
 
       <nav id="primary-nav" class="primary-nav" aria-label="Primary">
         <ul>
-          <li><a href="inventory.html" aria-current="page">Shop Inventory</a></li>
-          <li><a href="sell.html">Sell to Us</a></li>
+          <li><a href="inventory.html" aria-current="page">Inventory</a></li>
+          <li><a href="sell.html">Sell to Me</a></li>
           <li><a href="appraisals.html">Appraisals</a></li>
           <li><a href="prices.html">Spot Prices</a></li>
           <li><a href="supplies.html">Supplies</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
 
-    <!-- Live spot ticker -->
     <div class="ticker" aria-label="Live precious metal spot prices">
       <div class="container ticker-inner">
-        <span class="ticker-label"><span class="live-dot" aria-hidden="true"></span>Live Spot</span>
+        <span class="ticker-label"><span class="live-dot" aria-hidden="true"></span>Spot</span>
         <ul class="ticker-list" data-ticker>
-          <li data-metal="XAU"><span class="m">Gold</span> <span class="p">—</span> <span class="c"></span></li>
-          <li data-metal="XAG"><span class="m">Silver</span> <span class="p">—</span> <span class="c"></span></li>
-          <li data-metal="XPT"><span class="m">Platinum</span> <span class="p">—</span> <span class="c"></span></li>
-          <li data-metal="XPD"><span class="m">Palladium</span> <span class="p">—</span> <span class="c"></span></li>
+          <li data-metal="XAU"><span class="m">Gold</span> <span class="p">&mdash;</span> <span class="c"></span></li>
+          <li data-metal="XAG"><span class="m">Silver</span> <span class="p">&mdash;</span> <span class="c"></span></li>
+          <li data-metal="XPT"><span class="m">Platinum</span> <span class="p">&mdash;</span> <span class="c"></span></li>
+          <li data-metal="XPD"><span class="m">Palladium</span> <span class="p">&mdash;</span> <span class="c"></span></li>
         </ul>
       </div>
     </div>
   </header>
 
   <main id="main">
-    <!-- ============ INVENTORY / GALLERY ============ -->
-    <section class="section section-ivory" id="inventory">
+    <section class="section">
       <div class="container">
-        <header class="section-head">
-          <p class="eyebrow">Shop Inventory</p>
-          <h1 class="page-title">Coins available now</h1>
-          <p>See something you like? Tap <strong>Inquire to Buy</strong> for current pricing and shipping. Inventory moves fast, so we'll confirm availability when we reply.</p>
-        </header>
+        <div class="page-head">
+          <h1 class="page-title">Inventory</h1>
+          <p>Every coin below is in hand and photographed front and back, so the pictures show the exact coin you'd receive. Prices move with the metals market, so ask and I'll quote you today's price with shipping.</p>
+        </div>
 
         <div class="filters" role="group" aria-label="Filter inventory">
           <button class="chip-btn is-active" data-filter="all" aria-pressed="true">All</button>
           <button class="chip-btn" data-filter="eagles" aria-pressed="false">Silver Eagles</button>
-          <button class="chip-btn" data-filter="dollars" aria-pressed="false">Morgan &amp; Peace Dollars</button>
-          <button class="chip-btn" data-filter="certified" aria-pressed="false">Certified &amp; Errors</button>
-          <button class="chip-btn" data-filter="bullion" aria-pressed="false">Gold &amp; Silver Bullion</button>
-          <button class="chip-btn" data-filter="sets" aria-pressed="false">Sets &amp; Classics</button>
+          <button class="chip-btn" data-filter="dollars" aria-pressed="false">Morgan &amp; Peace dollars</button>
+          <button class="chip-btn" data-filter="certified" aria-pressed="false">Certified &amp; errors</button>
+          <button class="chip-btn" data-filter="bullion" aria-pressed="false">Bullion</button>
+          <button class="chip-btn" data-filter="sets" aria-pressed="false">Sets &amp; classics</button>
         </div>
 
         <div class="gallery" data-gallery>
@@ -189,45 +187,29 @@
 
         <aside class="inquiry-banner">
           <div>
-            <h3>Looking for something specific?</h3>
-            <p>Tell us the coin, grade, or budget and we'll let you know what we can find.</p>
+            <h3>Looking for a particular date or grade?</h3>
+            <p>Tell me what you're after and your budget, and I'll keep an eye out for it.</p>
           </div>
-          <button class="btn btn-primary" type="button" data-inquire="Looking for a specific coin">Send a Wish List</button>
+          <button class="btn btn-primary" type="button" data-inquire="Looking for a specific coin">Send me a wish list</button>
         </aside>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="assets/img/logo-mark.svg" width="56" height="56" alt="">
-        <p class="footer-name">David's Coins &amp; Collectibles</p>
-        <p>An online coin and bullion dealer based in Katy, Texas.</p>
-      </div>
-      <nav aria-label="Footer">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="inventory.html">Shop Inventory</a></li>
-          <li><a href="sell.html">Sell to Us</a></li>
-          <li><a href="appraisals.html">Appraisals</a></li>
-          <li><a href="prices.html">Spot Prices</a></li>
-          <li><a href="supplies.html">Supplies</a></li>
-        </ul>
+    <div class="container footer-inner">
+      <p class="footer-name">David's Coins &amp; Collectibles</p>
+      <nav class="footer-nav" aria-label="Footer">
+          <a href="inventory.html">Inventory</a>
+          <a href="sell.html">Sell to Me</a>
+          <a href="appraisals.html">Appraisals</a>
+          <a href="prices.html">Spot Prices</a>
+          <a href="supplies.html">Supplies</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
       </nav>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li data-biz-row="phone"><a data-biz="phone" href="tel:">Phone</a></li>
-          <li><a data-biz="email" href="mailto:djd101108@yahoo.com">djd101108@yahoo.com</a></li>
-          <li><a href="contact.html">Send us a message</a></li>
-          <li>Online only · Katy, Texas</li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© <span data-year></span> David's Coins &amp; Collectibles. All rights reserved.</p>
-      <p>Spot prices are for reference only and are not an offer to buy or sell.</p>
+      <p class="footer-meta">Katy, Texas. <a data-biz="email" href="mailto:djd101108@yahoo.com">djd101108@yahoo.com</a><span data-biz-row="phone">, <a data-biz="phone" href="tel:">Phone</a></span></p>
+      <p class="footer-meta">&copy; <span data-year></span> David DiSanto. Spot prices are for reference only.</p>
     </div>
   </footer>
 
@@ -251,14 +233,12 @@
     </div>
   </dialog>
 
-  <!-- Quick inquiry dialog -->
   <dialog class="inquiry" data-inquiry aria-labelledby="inq-title">
     <form class="contact-form inquiry-form" data-contact data-quick novalidate>
-            <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button class="viewer-close" type="button" data-inquiry-close aria-label="Close">
         <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
       </button>
-      <p class="eyebrow">Quick Inquiry</p>
       <h3 id="inq-title" data-inq-title>Ask about a coin</h3>
       <input type="hidden" name="topic" value="General question">
       <input type="hidden" name="item" value="">
@@ -282,11 +262,10 @@
         <label for="qi-msg">Message</label>
         <textarea id="qi-msg" name="message" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
-      <p class="form-note">Your message goes straight to our inbox.</p>
+      <button type="submit" class="btn btn-primary btn-block">Send</button>
     </form>
   </dialog>
 
-  <script src="assets/js/main.js?v=4" defer></script>
+  <script src="assets/js/main.js?v=5" defer></script>
 </body>
 </html>

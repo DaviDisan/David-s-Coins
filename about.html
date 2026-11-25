@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About David | David's Coins &amp; Collectibles</title>
+  <meta name="description" content="David DiSanto runs David's Coins &amp; Collectibles himself from Katy, Texas.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" href="assets/img/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css?v=6">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="David's Coins &amp; Collectibles, home">
+        <img src="assets/img/logo-mark.svg" width="48" height="48" alt="">
+        <span class="brand-text">
+          <span class="brand-name">David's Coins</span>
+          <span class="brand-sub">&amp; Collectibles</span>
+        </span>
+      </a>
+
+      <div class="header-actions">
+        <button class="btn btn-primary btn-sm header-inquire" type="button" data-inquire="General question">Inquire</button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="inventory.html">Inventory</a></li>
+          <li><a href="sell.html">Sell to Me</a></li>
+          <li><a href="appraisals.html">Appraisals</a></li>
+          <li><a href="prices.html">Spot Prices</a></li>
+          <li><a href="supplies.html">Supplies</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="ticker" aria-label="Live precious metal spot prices">
+      <div class="container ticker-inner">
+        <span class="ticker-label"><span class="live-dot" aria-hidden="true"></span>Spot</span>
+        <ul class="ticker-list" data-ticker>
+          <li data-metal="XAU"><span class="m">Gold</span> <span class="p">&mdash;</span> <span class="c"></span></li>
+          <li data-metal="XAG"><span class="m">Silver</span> <span class="p">&mdash;</span> <span class="c"></span></li>
+          <li data-metal="XPT"><span class="m">Platinum</span> <span class="p">&mdash;</span> <span class="c"></span></li>
+          <li data-metal="XPD"><span class="m">Palladium</span> <span class="p">&mdash;</span> <span class="c"></span></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container about-grid">
+        <figure class="about-photo">
+          <img src="assets/img/david.webp" alt="David DiSanto" width="800" height="800">
+        </figure>
+        <div class="prose">
+          <h1 class="page-title">About David</h1>
+          <p class="lead">I'm David DiSanto, and David's Coins &amp; Collectibles is my business. I run it myself from Katy, Texas, and sell online and by mail.</p>
+          <p>Every coin on this site is one I own. I photograph each one front and back on the same table, under the same light, so what you see on the inventory page is the exact coin you'd get, not a stock image.</p>
+          <p>Before anything is listed or bought, raw coins are weighed on a 0.1&nbsp;g scale and looked over under a digital microscope. Certified coins stay in their original PCGS, NGC, ANACS or ICG holders.</p>
+          <p>When you fill out a form or send an email, it comes straight to me, and I answer it myself.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="contact.html">Contact David</a>
+            <a class="text-link" href="inventory.html">Browse the inventory</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-name">David's Coins &amp; Collectibles</p>
+      <nav class="footer-nav" aria-label="Footer">
+          <a href="inventory.html">Inventory</a>
+          <a href="sell.html">Sell to Me</a>
+          <a href="appraisals.html">Appraisals</a>
+          <a href="prices.html">Spot Prices</a>
+          <a href="supplies.html">Supplies</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-meta">Katy, Texas. <a data-biz="email" href="mailto:djd101108@yahoo.com">djd101108@yahoo.com</a><span data-biz-row="phone">, <a data-biz="phone" href="tel:">Phone</a></span></p>
+      <p class="footer-meta">&copy; <span data-year></span> David DiSanto. Spot prices are for reference only.</p>
+    </div>
+  </footer>
+
+
+  <dialog class="inquiry" data-inquiry aria-labelledby="inq-title">
+    <form class="contact-form inquiry-form" data-contact data-quick novalidate>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="viewer-close" type="button" data-inquiry-close aria-label="Close">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <h3 id="inq-title" data-inq-title>Ask about a coin</h3>
+      <input type="hidden" name="topic" value="General question">
+      <input type="hidden" name="item" value="">
+      <div class="field">
+        <label for="qi-name">Name <span aria-hidden="true">*</span></label>
+        <input id="qi-name" name="name" type="text" autocomplete="name" required aria-describedby="qi-name-err">
+        <p class="err" id="qi-name-err"></p>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="qi-email">Email <span aria-hidden="true">*</span></label>
+          <input id="qi-email" name="email" type="email" autocomplete="email" required aria-describedby="qi-email-err">
+          <p class="err" id="qi-email-err"></p>
+        </div>
+        <div class="field">
+          <label for="qi-phone">Phone</label>
+          <input id="qi-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="field">
+        <label for="qi-msg">Message</label>
+        <textarea id="qi-msg" name="message" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Send</button>
+    </form>
+  </dialog>
+
+  <script src="assets/js/main.js?v=5" defer></script>
+</body>
+</html>

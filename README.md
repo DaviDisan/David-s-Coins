@@ -3,7 +3,7 @@
 Static site deployed on Vercel from this GitHub repo. Every push to `main` goes live automatically.
 
 ## Pages
-`index.html` (home), `inventory.html`, `sell.html`, `appraisals.html`, `prices.html`, `supplies.html`, `contact.html`.
+`index.html` (home), `inventory.html`, `sell.html`, `appraisals.html`, `prices.html`, `supplies.html`, `about.html`, `contact.html`.
 Each page carries its own copy of the header, footer and inquiry dialog, so a change to those needs making in every page.
 `vercel.json` turns on clean URLs, so `/inventory` serves `inventory.html`.
 
